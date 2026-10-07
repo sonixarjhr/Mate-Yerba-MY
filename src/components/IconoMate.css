@@ -1,0 +1,30 @@
+.icono-mate {
+  width: 120px;
+  height: 140px;
+}
+
+.calabaza { fill: #8a5a2b; }
+.borde    { fill: #5b3a1a; }
+.yerba    { fill: #3f7d3a; }
+.bombilla { stroke: #d5d9dc; stroke-width: 3; stroke-linecap: round; }
+
+.vapor {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 4;
+  stroke-linecap: round;
+  opacity: 0;
+  animation: subir 3s ease-in-out infinite;
+}
+.v2 { animation-delay: 0.6s; }
+.v3 { animation-delay: 1.2s; }
+
+@keyframes subir {
+  0%   { opacity: 0;   transform: translateY(12px); }
+  40%  { opacity: 0.8; }
+  100% { opacity: 0;   transform: translateY(-14px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vapor { animation: none; opacity: 0.6; }
+}
