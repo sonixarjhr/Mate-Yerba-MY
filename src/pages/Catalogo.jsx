@@ -1,7 +1,10 @@
 import { yerbas } from "../data/yerbas";
+import { useCarrito } from "../context/CarritoContext";
 import "./Catalogo.css";
 
 export default function Catalogo() {
+  const { agregar } = useCarrito();
+
   return (
     <main className="catalogo">
       <header className="catalogo-cabecera">
@@ -20,7 +23,9 @@ export default function Catalogo() {
                 <span className="tarjeta-precio">${y.precio.toLocaleString("es-AR")}</span>
                 <span className="tarjeta-peso">{y.peso}</span>
               </div>
-              <button className="btn-agregar">Agregar al carrito</button>
+              <button className="btn-agregar" onClick={() => agregar(y.id)}>
+                Agregar al carrito
+              </button>
             </div>
           </article>
         ))}
