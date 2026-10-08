@@ -41,3 +41,13 @@
 @media (prefers-reduced-motion: reduce) {
   .vapor { animation: none; opacity: 0.5; }
 }
+
+.icono-mate-img,
+.icono-vapor {
+  transition: transform 0.3s ease;
+}
+
+.icono-mate:hover .icono-mate-img,
+.icono-mate:hover .icono-vapor {
+  transform: translateY(-6px);
+}
