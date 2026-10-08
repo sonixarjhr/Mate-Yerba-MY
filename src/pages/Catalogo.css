@@ -1,0 +1,104 @@
+.catalogo {
+  min-height: 100vh;
+  padding: 96px 24px 64px;
+  background: var(--negro-mate);
+  color: var(--crema);
+}
+
+.catalogo-cabecera {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+}
+
+.catalogo-cabecera h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.catalogo-cabecera p {
+  margin-top: 8px;
+  color: #b9ad98;
+}
+
+.catalogo-grilla {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--gris-mate);
+  border: 1px solid #333;
+  border-radius: 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+  border-color: var(--madera);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+}
+
+.tarjeta-imagen {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: linear-gradient(135deg, var(--madera-oscura), var(--gris-claro));
+}
+
+.tarjeta-cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  padding: 20px;
+}
+
+.tarjeta-cuerpo h2 {
+  font-size: 1.25rem;
+}
+
+.tarjeta-desc {
+  flex: 1;
+  color: #b9ad98;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.tarjeta-pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.tarjeta-precio {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.tarjeta-peso {
+  color: #b9ad98;
+  font-size: 0.9rem;
+}
+
+.btn-agregar {
+  padding: 12px;
+  border: none;
+  border-radius: 999px;
+  background: var(--madera);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-agregar:hover {
+  background: #a8714a;
+  transform: translateY(-2px);
+}
