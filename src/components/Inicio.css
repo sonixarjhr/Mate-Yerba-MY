@@ -1,0 +1,49 @@
+.inicio {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  background-color: #1d3b2f;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.45)),
+    url("/fondo-lago.webp");
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.inicio-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 10vh 24px 24px;
+}
+
+.inicio h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.btn-catalogo {
+  margin-top: 8px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 999px;
+  background: #3f7d3a;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn-catalogo:hover {
+  background: #4f9a49;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(79, 154, 73, 0.6);
+}
+
+.btn-catalogo:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(79, 154, 73, 0.5);
+}
