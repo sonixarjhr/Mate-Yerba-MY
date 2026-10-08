@@ -1,30 +1,43 @@
 .icono-mate {
-  width: 120px;
-  height: 140px;
+  position: relative;
+  display: inline-block;
+  height: 170px;
 }
 
-.calabaza { fill: #8a5a2b; }
-.borde    { fill: #5b3a1a; }
-.yerba    { fill: #3f7d3a; }
-.bombilla { stroke: #d5d9dc; stroke-width: 3; stroke-linecap: round; }
+.icono-mate-img {
+  height: 100%;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+}
+
+.icono-vapor {
+  position: absolute;
+  left: 42%;
+  bottom: 62%;
+  width: 26%;
+  height: 36%;
+  overflow: visible;
+  pointer-events: none;
+}
 
 .vapor {
   fill: none;
   stroke: #ffffff;
-  stroke-width: 4;
+  stroke-width: 3;
   stroke-linecap: round;
   opacity: 0;
   animation: subir 3s ease-in-out infinite;
 }
-.v2 { animation-delay: 0.6s; }
-.v3 { animation-delay: 1.2s; }
+.v2 { animation-delay: 0.7s; }
+.v3 { animation-delay: 1.4s; }
 
 @keyframes subir {
-  0%   { opacity: 0;   transform: translateY(12px); }
-  40%  { opacity: 0.8; }
+  0%   { opacity: 0;   transform: translateY(14px); }
+  40%  { opacity: 0.7; }
   100% { opacity: 0;   transform: translateY(-14px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .vapor { animation: none; opacity: 0.6; }
+  .vapor { animation: none; opacity: 0.5; }
 }

@@ -34,5 +34,16 @@
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
-.btn-catalogo:hover { background: #4f9a49; }
+
+.btn-catalogo:hover {
+  background: #4f9a49;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(79, 154, 73, 0.6);
+}
+
+.btn-catalogo:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(79, 154, 73, 0.5);
+}

@@ -2,14 +2,13 @@ import "./IconoMate.css";
 
 export default function IconoMate() {
   return (
-    <svg className="icono-mate" viewBox="0 0 120 140" role="img" aria-label="Mate con vapor">
-      <path className="vapor v1" d="M45 40 C35 30, 55 22, 45 10" />
-      <path className="vapor v2" d="M62 42 C52 30, 72 20, 62 6" />
-      <path className="vapor v3" d="M79 40 C69 30, 89 22, 79 10" />
-      <path className="calabaza" d="M25 55 C20 100, 35 130, 60 130 C85 130, 100 100, 95 55 Z" />
-      <ellipse className="borde" cx="60" cy="55" rx="35" ry="9" />
-      <ellipse className="yerba" cx="60" cy="55" rx="28" ry="6" />
-      <line className="bombilla" x1="78" y1="54" x2="100" y2="22" />
-    </svg>
+    <div className="icono-mate">
+      <img className="icono-mate-img" src="/mate-icono.webp" alt="Mate con bombilla" />
+      <svg className="icono-vapor" viewBox="0 0 60 80" aria-hidden="true">
+        <path className="vapor v1" d="M12 78 C2 62, 22 50, 12 32 C8 22, 16 12, 12 2" />
+        <path className="vapor v2" d="M30 78 C20 62, 40 50, 30 32 C26 22, 34 12, 30 2" />
+        <path className="vapor v3" d="M48 78 C38 62, 58 50, 48 32 C44 22, 52 12, 48 2" />
+      </svg>
+    </div>
   );
 }
