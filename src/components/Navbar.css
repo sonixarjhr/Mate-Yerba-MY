@@ -1,0 +1,98 @@
+.hamburguesa {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1001;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: rgba(22, 22, 22, 0.6);
+  border: 1px solid rgba(230, 216, 192, 0.25);
+  border-radius: 14px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.25s ease;
+}
+
+.hamburguesa:hover {
+  background: rgba(91, 58, 31, 0.85);
+}
+
+.hamburguesa span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--crema);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Las tres líneas se convierten en una X al abrir */
+.hamburguesa.abierto span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.hamburguesa.abierto span:nth-child(2) { opacity: 0; }
+.hamburguesa.abierto span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+.fondo-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.fondo-menu.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: min(320px, 85vw);
+  padding: 96px 24px 24px;
+  background: linear-gradient(180deg, var(--gris-mate), var(--negro-mate));
+  border-right: 1px solid rgba(139, 94, 60, 0.5);
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 0.35s ease, visibility 0.35s;
+  z-index: 1000;
+}
+
+.menu-lateral.abierto {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-lateral a {
+  display: block;
+  padding: 14px 16px;
+  border-radius: 12px;
+  color: var(--crema);
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.menu-lateral a:hover {
+  background: rgba(139, 94, 60, 0.35);
+  transform: translateX(4px);
+}
+
+.menu-lateral a.active {
+  background: var(--madera-oscura);
+}
