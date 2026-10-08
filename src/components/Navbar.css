@@ -96,3 +96,43 @@
 .menu-lateral a.active {
   background: var(--madera-oscura);
 }
+
+.carrito-flotante {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1001;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--crema);
+  background: rgba(22, 22, 22, 0.6);
+  border: 1px solid rgba(230, 216, 192, 0.25);
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.carrito-flotante:hover {
+  background: rgba(31, 77, 46, 0.85);
+  transform: translateY(-2px);
+}
+
+.carrito-contador {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--verde-brillante);
+  color: #0f2418;
+  font-size: 0.75rem;
+  font-weight: 700;
+}

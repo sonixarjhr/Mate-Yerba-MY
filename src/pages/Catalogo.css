@@ -39,7 +39,7 @@
 
 .tarjeta:hover {
   transform: translateY(-6px);
-  border-color: var(--madera);
+  border-color: var(--verde-medio);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
 }
 
@@ -49,7 +49,7 @@
   align-items: center;
   justify-content: center;
   font-size: 4rem;
-  background: linear-gradient(135deg, var(--madera-oscura), var(--gris-claro));
+  background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
 }
 
 .tarjeta-cuerpo {
@@ -91,14 +91,15 @@
   padding: 12px;
   border: none;
   border-radius: 999px;
-  background: var(--madera);
-  color: #fff;
+  background: var(--verde-brillante);
+  color: #0f2418;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn-agregar:hover {
-  background: #a8714a;
+  background: var(--verde-brillante-hover);
   transform: translateY(-2px);
 }
