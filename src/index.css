@@ -22,3 +22,8 @@ body {
   font-family: system-ui, sans-serif;
   background: var(--negro-mate);
 }
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
