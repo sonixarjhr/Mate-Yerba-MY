@@ -6,7 +6,7 @@ import Catalogo from "./pages/Catalogo";
 import Carrito from "./pages/Carrito";
 import Historia from "./pages/Historia";
 import Redes from "./pages/Redes";
-import EnConstruccion from "./pages/EnConstruccion";
+import Lugar from "./pages/Lugar";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/historia" element={<Historia />} />
           <Route path="/redes" element={<Redes />} />
-          <Route path="/lugar" element={<EnConstruccion titulo="Nuestro lugar" />} />
+          <Route path="/lugar" element={<Lugar />} />
         </Routes>
       </BrowserRouter>
     </CarritoProvider>
