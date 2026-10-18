@@ -5,6 +5,7 @@ export const yerbas = [
     descripcion: "La tradicional, con palo. Sabor equilibrado para el mate de todos los días.",
     peso: "1 kg",
     precio: 6500,
+    imagen: "/yerba-bolsa.webp",
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const yerbas = [
     descripcion: "Molienda fina y sabor amable, ideal para quienes empiezan con el mate.",
     peso: "1 kg",
     precio: 7200,
+    imagen: "/yerba-bolsa.webp",
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const yerbas = [
     descripcion: "Secada al fuego con leña, con un toque ahumado muy característico.",
     peso: "500 g",
     precio: 5800,
+    imagen: "/yerba-bolsa.webp",
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ export const yerbas = [
     descripcion: "Mezcla con menta y boldo, fresca y suave, para tomar a cualquier hora.",
     peso: "500 g",
     precio: 5400,
+    imagen: "/yerba-bolsa.webp",
   },
   {
     id: 5,
@@ -33,6 +37,7 @@ export const yerbas = [
     descripcion: "Cultivada sin agroquímicos, con un sabor limpio y bien herbal.",
     peso: "1 kg",
     precio: 9800,
+    imagen: "/yerba-bolsa.webp",
   },
   {
     id: 6,
@@ -40,5 +45,6 @@ export const yerbas = [
     descripcion: "Estacionada 24 meses para un sabor más redondo y duradero.",
     peso: "1 kg",
     precio: 10500,
+    imagen: "/yerba-bolsa.webp",
   },
 ];
