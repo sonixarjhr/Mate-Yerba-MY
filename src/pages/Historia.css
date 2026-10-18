@@ -1,8 +1,31 @@
 .historia {
-  min-height: 100vh;
-  padding: 96px 24px 64px;
-  background: linear-gradient(180deg, var(--negro-mate), var(--gris-mate));
+  position: relative;
+  isolation: isolate;
   color: var(--crema);
+}
+
+/* Fondo fijo: se queda quieto mientras el texto se mueve */
+.historia-fondo {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--negro-mate);
+  background-image: url("/fondo-historia.webp");
+  background-size: cover;
+  background-position: center;
+  transform: translateZ(0);
+}
+
+/* Capa de contraste: la foto es clara, por eso es bastante oscura */
+.historia-capa {
+  min-height: 100vh;
+  padding: 96px 24px 80px;
+  background: linear-gradient(
+    180deg,
+    rgba(24, 18, 12, 0.6) 0%,
+    rgba(24, 18, 12, 0.72) 45%,
+    rgba(24, 18, 12, 0.8) 100%
+  );
 }
 
 .historia-contenido {
@@ -17,23 +40,64 @@
 
 .historia-cabecera h1 {
   font-size: clamp(2rem, 6vw, 3.2rem);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
 }
 
 .historia-cabecera p {
   margin-top: 12px;
-  color: #b9ad98;
+  color: #e0d3bb;
   font-size: 1.1rem;
   font-style: italic;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-.historia-cabecera::after {
-  content: "";
-  display: block;
-  width: 72px;
-  height: 3px;
-  margin: 24px auto 0;
-  border-radius: 999px;
-  background: var(--madera);
+/* Divisor con madera y hojas */
+.historia-divisor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.historia-madera {
+  width: 90px;
+  height: 6px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    #6b4423 0 8px,
+    #7a5230 8px 12px,
+    #5b3a1f 12px 20px
+  );
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Hojas verdes */
+.hist-hoja {
+  width: 26px;
+  height: 26px;
+  fill: #4caf50;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
+}
+
+.hist-vena {
+  fill: none;
+  stroke: #1f4d2e;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+}
+
+.historia-divisor .hist-hoja {
+  transform: rotate(-30deg);
+}
+
+.historia-divisor .hist-hoja-chica {
+  width: 18px;
+  height: 18px;
+  margin-left: -6px;
+  fill: #6fcf8c;
+  transform: rotate(35deg);
 }
 
 .historia-bloque {
@@ -41,27 +105,77 @@
   animation: aparecer 0.8s ease both;
 }
 
+/* Subtítulo con hoja y filete de madera debajo */
 .historia-bloque h2 {
-  margin-bottom: 12px;
-  color: #d9b98f;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  color: #e3c9a0;
   font-size: 1.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  background: repeating-linear-gradient(
+      90deg,
+      #6b4423 0 8px,
+      #7a5230 8px 12px,
+      #5b3a1f 12px 20px
+    )
+    no-repeat left bottom / 110px 4px;
+}
+
+.hist-hoja-titulo {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  transform: rotate(-20deg);
 }
 
 .historia-bloque p {
-  color: #d8ccb6;
+  color: #eadfca;
   font-size: 1.05rem;
   line-height: 1.8;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
 }
 
+/* Cita con tablón de madera y hoja */
 .historia-cita {
+  position: relative;
   margin: 48px 0;
-  padding: 24px 28px;
-  border-left: 4px solid var(--madera);
+  padding: 26px 28px 26px 44px;
   border-radius: 0 16px 16px 0;
-  background: #1f4d2e;
+  background: linear-gradient(135deg, rgba(38, 30, 22, 0.9), rgba(22, 30, 24, 0.85));
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
   font-size: 1.3rem;
   font-style: italic;
   line-height: 1.6;
+  overflow: hidden;
+}
+
+.historia-cita::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 16px;
+  background: repeating-linear-gradient(
+    180deg,
+    #6b4423 0 6px,
+    #7a5230 6px 9px,
+    #5b3a1f 9px 15px
+  );
+  box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.hist-hoja-cita {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  opacity: 0.55;
+  transform: rotate(35deg);
 }
 
 .historia-cierre {
@@ -69,9 +183,25 @@
   text-align: center;
 }
 
+.historia-cierre::before {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  margin: 0 auto 24px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    #6b4423 0 8px,
+    #7a5230 8px 12px,
+    #5b3a1f 12px 20px
+  );
+}
+
 .historia-cierre p {
   margin-bottom: 20px;
   font-size: 1.15rem;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
 }
 
 .btn-historia {
