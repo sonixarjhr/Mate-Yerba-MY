@@ -5,6 +5,7 @@ import Inicio from "./components/Inicio";
 import Catalogo from "./pages/Catalogo";
 import Carrito from "./pages/Carrito";
 import Historia from "./pages/Historia";
+import Redes from "./pages/Redes";
 import EnConstruccion from "./pages/EnConstruccion";
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/historia" element={<Historia />} />
-          <Route path="/redes" element={<EnConstruccion titulo="Nuestras redes" />} />
+          <Route path="/redes" element={<Redes />} />
           <Route path="/lugar" element={<EnConstruccion titulo="Nuestro lugar" />} />
         </Routes>
       </BrowserRouter>
